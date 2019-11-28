@@ -1,8 +1,8 @@
 package com.emusicstore.model;
 
+
+//product class POJO
 public class Product {
-
-
     private String productName;
     private String productCategory;
     private String productDescription;
@@ -15,7 +15,6 @@ public class Product {
     public String getProductName() {
         return productName;
     }
-
     public void setProductName(String productName) {
         this.productName = productName;
     }
