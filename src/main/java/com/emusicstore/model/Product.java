@@ -2,7 +2,7 @@ package com.emusicstore.model;
 
 
 //product class POJO
-//new changes
+//new changes -Product POJO
 public class Product {
     private String productName;
     private String productCategory;
