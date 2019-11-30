@@ -2,6 +2,7 @@ package com.emusicstore.dao;
 
 import com.emusicstore.model.Product;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class ProductDao {
     public List<Product> getProductList(){
         Product product1=new Product();
         product1.setProductCategory("instrument");
+        product1.setProductId("101");
         product1.setProductCondition("new");
         product1.setProductDescription("This is a fender start guitar !!");
         product1.setProductName("Guitar1");
@@ -21,6 +23,7 @@ public class ProductDao {
         product1.setProductManufacture("Fender");
 
         Product product2=new Product();
+        product1.setProductId("102");
         product2.setProductCategory("instrument");
         product2.setProductCondition("new");
         product2.setProductDescription("This is a gooood keyboard !!");
@@ -31,6 +34,7 @@ public class ProductDao {
         product2.setProductManufacture("Fender");
 
         Product product3=new Product();
+        product1.setProductId("103");
         product3.setProductCategory("instrument");
         product3.setProductCondition("new");
         product3.setProductDescription("This is violin  !!");
@@ -47,4 +51,13 @@ public class ProductDao {
             return productList;
     }
 
+    public Product getProductById(String productId) throws IOException{
+
+        for (Product product : getProductList()) {
+            if(product.getProductId().equals(productId)) {
+                return product;
+            }
+        }
+        throw new IOException("No Product Found");
+    }
 }

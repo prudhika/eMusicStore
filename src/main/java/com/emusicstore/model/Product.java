@@ -1,8 +1,9 @@
 package com.emusicstore.model;
 
-
 //product class POJO
 public class Product {
+
+    private String productId;
     private String productName;
     private String productCategory;
     private String productDescription;
@@ -12,7 +13,16 @@ public class Product {
     private int unitInStack;
     private String productManufacture;
 
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
     public String getProductName() {
+
         return productName;
     }
     public void setProductName(String productName) {
