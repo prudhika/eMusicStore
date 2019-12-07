@@ -5,9 +5,9 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>All Products</h1>
+            <h1>Product Inventory Page</h1>
 
-            <p class="lead">Checkout all the awesome products available now!</p>
+            <p class="lead">This is the product inventory page!</p>
         </div>
 
         <table class="table table-striped table-hover">
@@ -29,9 +29,15 @@
                     <td>${product.productCondition}</td>
                     <td>${product.productPrice} USD</td>
                     <td><a href="<spring:url value="/productList/viewProduct/${product.productId}" />"
-                    ><span class="glyphicon glyphicon-info-sign"></span></a></td>
-                </tr>
+                        ><span class="glyphicon glyphicon-info-sign"></span></a>
+
+                        <a href="<spring:url value="/admin/productInventory/deleteProduct/${product.productId}" />"
+                        ><span class="glyphicon glyphicon-remove"></span></a>
+                        </td>
+                    </tr>
             </c:forEach>
         </table>
+
+        <a href="<spring:url value="/admin/productInventory/addProduct" />" class="btn btn-primary">Add Product</a>
 
 <%@include file="/WEB-INF/views/template/footer.jsp"%>
