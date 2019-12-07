@@ -1,8 +1,16 @@
 package com.emusicstore.model;
 
 //product class POJO
+
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
+
+@Entity
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String productId;
     private String productName;
     private String productCategory;
@@ -12,6 +20,9 @@ public class Product {
     private String productStatus;
     private int unitInStack;
     private String productManufacture;
+
+    @Transient
+    private MultipartFile productImage;
 
     public String getProductId() {
         return productId;
@@ -83,5 +94,13 @@ public class Product {
 
     public void setProductManufacture(String productManufacture) {
         this.productManufacture = productManufacture;
+    }
+
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
     }
 }
